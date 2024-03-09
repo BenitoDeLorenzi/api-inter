@@ -11,7 +11,13 @@ app.use((req, res, next) => {
 const interRoutes = require("./routes/interRoutes");
 
 app.use(express.json());
-app.use(cors());
+
+app.use(
+    cors({
+        origin: "*",
+    })
+);
+
 app.use("/inter", interRoutes);
 
 module.exports = app;
